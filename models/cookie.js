@@ -10,6 +10,10 @@ var cookie = {
   
   update: function(id,cb) {
     orm.update("cookies",id,cb); 
+  },
+
+  create: function(name,cb) {
+    orm.create("cookies",name,cb); 
   }
 }
 

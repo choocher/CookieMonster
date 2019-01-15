@@ -1,3 +1,3 @@
-INSERT INTO cookies (name) VALUES ('Chocolate Chunk Cookies');
-INSERT INTO cookies (name) VALUES ('Double-stuffed Oreo Cookies');
-INSERT INTO cookies (name, devoured) VALUES ('White Chocolate Macadamia Cookies', true);
+INSERT INTO cookies (cookie_name, devoured) VALUES ('Chocolate Chunk Cookie', FALSE);
+INSERT INTO cookies (cookie_name, devoured) VALUES ('Double-stuffed Oreo Cookie', FALSE);
+INSERT INTO cookies (cookie_name, devoured) VALUES ('White Chocolate Macadamia Cookies', FALSE);

@@ -18,12 +18,14 @@ app.use(methodOverride("_method"));
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({ 
+  defaultLayout: "main" 
+}));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them.
+// Import routes and give the server access to them. Connecting to "Controllers folder"
 var routes = require("./controllers/cookiesController.js");
-app.use(routes);
+app.use('/',routes);
 
 // Start our server so that it can begin listening to client requests.
 var PORT = 8080;

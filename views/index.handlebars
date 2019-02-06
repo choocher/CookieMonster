@@ -1,0 +1,105 @@
+{{!-- <p>Sucessfully connected to server!</p> --}}
+<div class="container">
+    <section id="page-name">
+            <iframe id="main-image" src="https://giphy.com/embed/xT0xeMA62E1XIlup68" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </section>
+
+<div id="container">
+    <div>
+        <h1>Ready to Eat</h1>   
+        {{#each cookie_data}}
+            {{#unless this.devoured}}
+
+            {{else}}
+                {{name}}
+            {{/if}}
+        {{/each}}
+    </div>
+
+    <div>
+        <h1>Already Eaten</h1>   
+        {{#each cookie_data}}
+            {{#if this.devoured}}
+                {{name}}
+            {{else}}
+            
+            {{/if}}
+        {{/each}}
+    </div>
+
+</div>
+
+
+{{!-- ****************Commented Out Below TEMP -Testing Tutor's Code ************ --}}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center" id="top-bar">
+            <h1>Eat-Da-Cookie</h1>
+        </div>
+        <div class="col-xs-6 text-center" class="task">
+            <div class="row">
+                {{#each cookie_data}}
+                {{#unless this.devoured}}
+                <div class="col-xs-9 text-center">
+                    <pre>{{this.id}}. {{this.cookie_name}}</pre>
+                </div>
+                <div class="col-xs-3 text-center">
+                    <form method="POST" action="/cookies/update?_method=PUT" class="button-size">
+                        <input type="hidden" name="cookie_id" type="text" value={{this.id}}>
+                        <br>
+                        <button type="submit" class="btn btn-default">
+                            DEVOUR IT!</button>
+                    </form>
+                </div>
+                {{/unless}}
+                {{/each}}
+            </div>
+        </div>
+{{!-- Once "DEVOURED BUTTON" clicked, cookie disappears and moves to new location on page --}}
+        <div class="col-xs-6 text-center" class="task">
+            {{#each cookie_data}}
+                {{#if this.devoured}}
+                     {{this.cookie_name}}
+                    {{/if}}
+                {{/each}}
+            </div>
+    </div>
+</div>
+
+{{!-- Creating Submit button to enter new cookies --}}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center enter_section">
+        <form action="/cookies/create" method="POST">
+            <input type="text" name="cookie_name" class="form-control" value="" id="enter_text">
+            <button type="submit" class="btn btn-primary" id="text-enter-button">SUBMIT</button> 
+        </form>
+        <p>Enter in a cookie you would like to eat!</p>
+        </div>
+    </div>
+</div>
+
+{{!-- ****************Commented Out Above TEMP -Testing Tutor's Code--}}
+{{!-- 
+
+                    {{/unless}}
+                {{/each}}
+            </table>
+        </div>
+        <div class="col-md-5 col-right">
+            {{#each cookies}}
+                {{#if devoured}}
+                    <div>{{id}}. {{cookie_name}}</div>
+                {{/if}}
+            {{/each}}        
+        </div>          
+    </section>
+
+    <form class="create-form">
+        <div class="form-group">
+            <label for="name"></label>
+            <textarea id="name" name="cookie-name" rows="2" cols="40" placeholder="What do you want to eat?"></textarea>
+        </div>
+        <button type="submit">Add cookie</button>
+    </form>     
+</div> --}}
